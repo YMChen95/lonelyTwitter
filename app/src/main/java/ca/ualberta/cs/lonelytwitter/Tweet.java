@@ -8,6 +8,13 @@ import java.util.Date;
  * Created by me7 on 1/19/17.
  */
 
+/**
+ * This class will set and get the date and message
+ * and also this class will check if the date and message satisify the requirement
+ * @throws TweetTooLongException if the length of this tweet exist 140 characters
+ * @return date
+ * @return message
+ */
 public abstract class Tweet implements Tweetable {
     public Date getDate() {
         return date;

@@ -66,7 +66,7 @@ public class LonelyTwitterActivity extends Activity {
 	private EditText bodyText;
 	private ListView oldTweetsList;
 	private enum TweetListOrdering{DATE_ASCENDING, DATE_DESCENDING, TEXT_ASCENDING, TEXT_DESCENDING}
-	private ArrayList<Tweet> tweetlist;
+	public ArrayList<Tweet> tweetlist;
 	private ArrayAdapter<Tweet> adapter;
 
 	public ListView getOldTweetsList(){
@@ -115,7 +115,9 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(activity, EditTweetActivity.class);
+				intent.putExtra("StringList", tweetlist.get(position).toString());
 				startActivity(intent);
+
 			}
 		});
 	}
